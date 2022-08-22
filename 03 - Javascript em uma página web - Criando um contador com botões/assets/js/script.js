@@ -3,36 +3,28 @@ const elementAdd = document.getElementById("adicionar");
 var currentNumberWrapper = document.getElementById("currentNumber")
 var currentNumber = 0;
 
-
-
 elementSub.addEventListener("click",subtrair);
 elementAdd.addEventListener("click",adicionar)
 
 function adicionar()
-{   
-    elementSub.disabled = false;
+{
+    currentNumber = currentNumber + 1;
+    currentNumberWrapper.innerHTML = currentNumber;
 
-    if(currentNumber >= 0 && currentNumber <= 9)
-    {   
-        currentNumber = currentNumber + 1;
-        currentNumberWrapper.innerHTML = currentNumber;
-    }else
+    if(currentNumber > -1)
     {
-        elementAdd.disabled = true;
+        currentNumberWrapper.style.color = 'black';
     }
-    
 }
 
 function subtrair()
 {
-    elementAdd.disabled = false;
+    currentNumber = currentNumber - 1;
+    currentNumberWrapper.innerHTML = currentNumber;
 
-    if(currentNumber >= 1 && currentNumber <= 10)
+    if(currentNumber < 0)
     {
-        currentNumber = currentNumber - 1;
-        currentNumberWrapper.innerHTML = currentNumber;
-    }else
-    {
-        elementSub.disabled = true;
+        currentNumberWrapper.style.color = 'red';
     }
 }
+
