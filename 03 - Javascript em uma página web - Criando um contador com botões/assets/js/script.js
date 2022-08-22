@@ -1,13 +1,18 @@
-var currentNumberWrapper = document.getElementById("currentNumber");
+const elementSub = document.getElementById("subtrair");
+const elementAdd = document.getElementById("adicionar");
+var currentNumberWrapper = document.getElementById("currentNumber")
 var currentNumber = 0;
 
-function increment()
+elementSub.addEventListener("click",subtrair);
+elementAdd.addEventListener("click",adicionar)
+
+function adicionar()
 {
     currentNumber = currentNumber + 1;
     currentNumberWrapper.innerHTML = currentNumber;
 }
 
-function decrement()
+function subtrair()
 {
     currentNumber = currentNumber - 1;
     currentNumberWrapper.innerHTML = currentNumber;
